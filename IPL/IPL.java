@@ -1,6 +1,8 @@
+package IPL;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,9 +27,10 @@ class pair{
 		this.bid = bid;
 	}
 }
-public class IPL {
-	public static void main(String[] args) {
+public class IPL{
+	public static void main(String[] args) throws teamnotfound {
 		
+		HashMap<String,List<pair>> IPL=new HashMap<String,List<pair>>();
 		List<pair> csk=new ArrayList<>();
 		csk.add(new pair("Ruturaj Gaikwad", 18.0));
         csk.add(new pair("Ravindra Jadeja", 18.0));
@@ -39,6 +42,8 @@ public class IPL {
         csk.add(new pair("Devon Conway", 6.25));
         csk.add(new pair("Khaleel Ahmed", 4.80));
         csk.add(new pair("Rachin Ravindra", 4.00));
+		IPL.put("CSK", csk);
+		
         List<pair> mi=new ArrayList<>();
         mi.add(new pair("Jasprit Bumrah", 18.00));
         mi.add(new pair("Suryakumar Yadav", 16.35));
@@ -52,6 +57,7 @@ public class IPL {
         mi.add(new pair("Will Jacks", 5.25));
         mi.add(new pair("Robin Minz", 65.00));
         mi.add(new pair("Ryan Rickelton", 1.00));
+        IPL.put("MI", mi);
         List<pair> rcb=new ArrayList<>();
         rcb.add(new pair("Virat Kohli", 21.00));
         rcb.add(new pair("Rajat Patidar", 11.00));
@@ -65,6 +71,7 @@ public class IPL {
         rcb.add(new pair("Liam Livingstone", 8.75));
         rcb.add(new pair("Rasikh Dar", 6.00));
         rcb.add(new pair("Krunal Pandya", 5.75));
+        IPL.put("RCB", rcb);
         List<pair> kkr=new ArrayList<>();
         kkr.add(new pair("Rinku Singh", 13.00));
         kkr.add(new pair("Varun Chakaravarthy", 12.00));
@@ -80,6 +87,7 @@ public class IPL {
         kkr.add(new pair("Anrich Nortje", 6.50));
         kkr.add(new pair("Spencer Johnson", 2.80));
         kkr.add(new pair("Vaibhav Arora", 1.80));
+        IPL.put("KKR", kkr);
         List<pair> srh = new ArrayList<>();
 
      // Retained Players
@@ -98,6 +106,7 @@ public class IPL {
      srh.add(new pair("Simarjeet Singh", 1.50));
      srh.add(new pair("Brydon Carse", 1.00));
      srh.add(new pair("Kamindu Mendis", 0.75));
+     IPL.put("SRH", srh);
      List<pair> dc = new ArrayList<>();
 
      dc.add(new pair("Axar Patel", 16.50));
@@ -118,6 +127,7 @@ public class IPL {
      dc.add(new pair("Vipraj Nigam", 0.50));
      dc.add(new pair("Dushmantha Chameera", 0.75));
      dc.add(new pair("Donovan Ferreira", 0.75));
+     IPL.put("DC", dc);
      List<pair> gt = new ArrayList<>();
 
      gt.add(new pair("Shubman Gill", 16.50));
@@ -135,6 +145,7 @@ public class IPL {
      gt.add(new pair("Glenn Phillips", 2.00));
      gt.add(new pair("Sherfane Rutherford", 2.60));
      gt.add(new pair("Sai Kishore", 2.00));
+     IPL.put("GT", gt);
      List<pair> rr = new ArrayList<>();
 
      rr.add(new pair("Sanju Samson", 18.00));
@@ -152,76 +163,43 @@ public class IPL {
      rr.add(new pair("Fazalhaq Farooqi", 2.00));
      rr.add(new pair("Akash Madhwal", 1.20));
      rr.add(new pair("Kwena Maphaka", 1.50));
+     IPL.put("RR", rr);
 			System.out.println("IPL Teams");
-			System.out.println("RCB - 1");
-			System.out.println("MI - 2");
-			System.out.println("RR - 3");
-			System.out.println("GT - 4");
-			System.out.println("CSK - 5");
-			System.out.println("KKR - 6");
-			System.out.println("SRH - 7");
-			System.out.println("DC - 8");
-			System.out.println("Enter the number of team");
+			System.out.println("RCB");
+			System.out.println("MI");
+			System.out.println("RR");
+			System.out.println("GT");
+			System.out.println("CSK");
+			System.out.println("KKR");
+			System.out.println("SRH");
+			System.out.println("DC");
+			System.out.println("Enter the team");
 			Scanner sc=new Scanner(System.in);
-			int s=sc.nextInt();
-			switch(s) {
-			case 1:
-				for(pair i:rcb)
-				{
-					System.out.println(i.getName()+" : "+i.getBid());
-				}
-				break;
-			case 2:
-				for(pair i:mi)
-				{
-					System.out.println(i.getName()+" : "+i.getBid());
-				}
-				break;
-			case 3:
-				for(pair i:rr)
-				{
-					System.out.println(i.getName()+" : "+i.getBid());
-				}
-				break;
-				
-			case 4:
-				for(pair i:gt)
-				{
-					System.out.println(i.getName()+" : "+i.getBid());
-				}
-			break;
-			case 5:
-				for(pair i:csk)
-				{
-					System.out.println(i.getName()+" : "+i.getBid());
-				}
-				break;
-				
-			case 6:
-				for(pair i:kkr)
-				{
-					System.out.println(i.getName()+" : "+i.getBid());
-				}
-				break;
-			case 7:
-				for(pair i:srh)
-				{
-					System.out.println(i.getName()+" : "+i.getBid());
-				}
-				break;
-				
-			case 8:
-				for(pair i:dc)
-				{
-					System.out.println(i.getName()+" : "+i.getBid());
-				}
-				break;
-			default:
-				System.out.println("enter a valid Number");
-		
+			String s=sc.next();
+			s=s.toUpperCase();
+			boolean f = false;
+			if(IPL.containsKey(s))
+			{
+			    List<pair> team = IPL.get(s);
+
+			    System.out.println("Players of " + s);
+
+			    for(pair p : team)
+			    {
+			        System.out.println("---------------------------");
+			        System.out.println("Name : " + p.getName());
+			        System.out.println("Bid  : " + p.getBid() + " Cr");
+			    }
+			    f=true;
 			}
-		
+			if(f)
+				return;
+			else throw new teamnotfound("team not found");
 	}
-
-
 }
+
+			
+			
+	
+
+
