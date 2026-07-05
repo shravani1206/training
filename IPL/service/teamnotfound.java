@@ -1,4 +1,4 @@
-package IPL;
+package IPL.service;
 
 public class teamnotfound extends Exception {
 
